@@ -1,1 +1,124 @@
-<h1>Demo Page</h1>
+<style>
+    /* DEFAULT styles (smallest viewport) */
+
+    /* reset browser defaults */
+    p, body { margin: 0 } 
+
+    body {
+        background-color: #fff(230, 228, 89);
+    }
+
+    /*
+        The header also uses flexbox. Unlike using float, this is a lot easier to layout your items.
+        With just "display: flex" and "justify-content: space-between," you can add as many things
+        as you want into the header container. The browser will try to space out these items evenly
+        and side by side for you. 
+    */
+    .header {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px;
+        font-family: sans-serif, helvetica, arial;
+    }
+
+    .logo-type {
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    /* Workflow:
+    1. set up your flex box code in the default section
+    2. Modify the code in the sections for larger viewports */
+    .container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px;
+        width: 100vw;
+        box-sizing: border-box;
+        justify-content: center;
+    }
+
+    .container .content-block  {
+        border: 1px solid rgb(39, 37, 37);
+        border-radius: 3px;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    /* MEDIUM viewport (380px and above)
+    You can see that we are just making modifications to the .container and .content-block.
+    Because CSS styles cascades. Typically, the styles appears later in the file overwrites the styles above. */
+    @media only screen and (min-width: 380px) {
+        body {
+            background-color: rgb(237, 220, 97);
+        }
+
+        .container {
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .container .content-block {
+            width: 48.5%;
+        }
+    }
+
+    /* LARGE viewport (730px and above) */
+    @media only screen and (min-width: 730px) {
+        body {
+            background-color: #e8a109;
+        }
+
+        .header {
+            padding: 20px 20px 0;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .container .content-block {
+            width: 32.5%;
+        }
+    }
+</style>
+
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <!-- This header is one flexbox -->
+        <div class="header">
+            <p class="logo-type">The Urban</p>
+            <a href="/">Login</a>
+        </div>
+         <!-- This container is another flexbox -->
+        <div class="container">
+            <div class="content-block block-1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Idque Caesaris facere voluntate liceret: sese habere. Petierunt uti sibi concilium totius Galliae in diem certam indicere.</p>
+            </div>
+        
+            <div class="content-block block-2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Idque Caesaris facere voluntate liceret: sese habere. Petierunt uti sibi concilium totius Galliae in diem certam indicere.</p>
+            </div>
+
+            <div class="content-block block-3">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Idque Caesaris facere voluntate liceret: sese habere. Petierunt uti sibi concilium totius Galliae in diem certam indicere.</p>
+            </div>
+        
+            <div class="content-block block-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Idque Caesaris facere voluntate liceret: sese habere. Petierunt uti sibi concilium totius Galliae in diem certam indicere.</p>
+            </div>
+
+            <div class="content-block block-3">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Idque Caesaris facere voluntate liceret: sese habere. Petierunt uti sibi concilium totius Galliae in diem certam indicere.</p>
+            </div>
+        
+            <div class="content-block block-4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua. Idque Caesaris facere voluntate liceret: sese habere. Petierunt uti sibi concilium totius Galliae in diem certam indicere.</p>
+            </div>
+        </div>
+    </body>
+</html>
